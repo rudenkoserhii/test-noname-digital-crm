@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout/Layout";
+import { lazy } from "react";
+import { Context } from "./components/Context/Context";
 
-function App() {
+const Home = lazy(() => import("./pages/Home.jsx"));
+const Admin = lazy(() => import("./pages/Admin.jsx"));
+const Customer = lazy(() => import("./pages/Customer"));
+const Driver = lazy(() => import("./pages/Driver"));
+const Dispatcher = lazy(() => import("./pages/Dispatcher"));
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
+          <Route path="admin" element={<Admin />} />
+          <Route path="driver" element={<Driver />} />
+          <Route path="customer" element={<Customer />} />
+          <Route path="dispatcher" element={<Dispatcher />} />
+        </Route>
+      </Routes>
+    </Context>
   );
-}
+};
 
-export default App;
