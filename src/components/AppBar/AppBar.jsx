@@ -1,24 +1,19 @@
 import { NavLink } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const AppBar = () => {
 
     return (
         <> 
             <ul>
-                <li key="1">
-                    <NavLink to={'/'}><p>Home</p></NavLink>
-                </li>
+                {/* <li key="1">
+                    <NavLink to={'signup'}><p>SignUp</p></NavLink>
+                </li> */}
                 <li key="2">
-                    <NavLink to={'admin'}><p>Admin</p></NavLink>
-                </li>
-                <li key="3">
-                    <NavLink to={'customer'}><p>Customer</p></NavLink>
-                </li>
-                <li key="4">
-                    <NavLink to={'driver'}><p>Driver</p></NavLink>
-                </li>
-                <li key="5">
-                    <NavLink to={'dispatcher'}><p>Dispatcher</p></NavLink>
+                    <NavLink to={'login'}>      <Button className='btn__login' variant="primary" onClick={(e) => {e.target.parentNode.style.opacity = '0.5'; e.target.parentNode.style.pointerEvents = 'none'}}>LOGIN</Button>
+
+</NavLink>
                 </li>
             </ul>
         </>
