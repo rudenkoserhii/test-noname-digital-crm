@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { Login } from './components/Login/Login';
-import { SignUp } from "./components/SignUp/SignUp";
+import { SignUp } from './components/SignUp/SignUp';
 import { Home } from './pages/Home';
 // import { lazy } from "react";
 import { Context } from "./components/Context/Context";
@@ -14,7 +14,6 @@ import { Context } from "./components/Context/Context";
 // const Driver = lazy(() => import("./pages/Driver"));
 // const Dispatcher = lazy(() => import("./pages/Dispatcher"));
 
-
 export const App = () => {
   return (
     <Context>
@@ -23,8 +22,8 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Home />} />
-            {/* <Route path="/signup" element={<SignUp />} /> */}
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           {/* <Route path="admin" element={<Admin />} />
           <Route path="driver" element={<Driver />} />
           <Route path="customer" element={<Customer />} />
